@@ -1,4 +1,4 @@
-package com.kukuruznyak.parser.service.impl.json;
+package com.kukuruznyak.parser.service.impl.xml;
 
 import com.kukuruznyak.parser.domain.Currency;
 import com.kukuruznyak.parser.service.ParseService;
@@ -7,13 +7,13 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.List;
 
-public class JsonParseServiceImplTest {
-    private ParseService parseService = new JsonParseServiceImpl();
+public class XmlParseServiceImplTest {
+    private ParseService parseService = new XmlParseServiceImpl();
 
     @Test
-    public void parse() throws IOException {
+   public void parse() throws IOException {
         List<Currency> currencyList = parseService
-                .parse("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
+                .parse("http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange");
         for (Currency currency : currencyList) {
             System.out.println(currency);
         }
