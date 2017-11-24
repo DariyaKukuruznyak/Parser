@@ -95,6 +95,8 @@ public class XmlParseServiceImpl implements ParseService {
             case CURRENCY_NODE:
                 currency = new Currency();
                 break;
+            default:
+                break;
         }
         return currency;
     }
